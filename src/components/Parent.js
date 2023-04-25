@@ -1,9 +1,15 @@
 import React from "react";
-// import Profile from '../public/images/profile.jpg'
-// import pic from '../public/images/pic.jpg'
 import profile from "../public/images/prof-removebg-preview.png";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {getParent} from '../store/features/parentSlice'
 
 const Parent = () => {
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(getParent())
+  },[])
+
   return (
     <div className="flex">
       <div className="w-32 mt-4">
